@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Player and Registration Form</title>
+    <style>
+      /* Basic styling for the body */
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      /* Styling for headings */
+      h1,
+      h2 {
+        color: #333;
+      }
+      /* Container styling for media and form sections */
+      .media-container,
+      .form-container {
+        margin-bottom: 40px;
+      }
+      /* Responsive styling for audio and video elements */
+      audio,
+      video {
+        width: 100%;
+        max-width: 600px;
+      }
+      /* Grid layout for the form */
+      form {
+        display: grid;
+        gap: 10px;
+      }
+      /* Bold labels for form inputs */
+      label {
+        font-weight: bold;
+      }
+      /* Styling for the submit button */
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        max-width: 200px;
+      }
+      /* Hover effect for the submit button */
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Media Player and Registration Form</h1>
+
+    <div class="media-container">
+      <h2>Audio Player</h2>
+      <!-- Audio player with a fallback message for unsupported browsers -->
+      <audio controls>
+        <source src="yeah.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <h2>Video Player</h2>
+      <!-- Video player with a poster image and a fallback message -->
+      <video controls poster="/placeholder.svg?height=400&width=600">
+        <source src="yeah.mp4" type="video/mp4" />
+        Your browser does not support the video element.
+      </video>
+    </div>
+
+    <div class="form-container">
+      <h2>User Registration</h2>
+      <!-- User registration form with various input fields -->
+      <form>
+        <!-- Full name input field -->
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <!-- Email address input field -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+
+        <!-- Password input field with a minimum length requirement -->
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          minlength="8"
+        />
+
+        <!-- Age input field with a minimum age requirement -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required min="18" />
+
+        <!-- Gender selection using radio buttons -->
+        <fieldset>
+          <legend>Gender:</legend>
+          <input type="radio" id="male" name="gender" value="male" required />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label>
+          <input type="radio" id="other" name="gender" value="other" />
+          <label for="other">Other</label>
+        </fieldset>
+
+        <!-- Terms and conditions agreement checkbox -->
+        <div>
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms">I agree to the Terms and Conditions</label>
+        </div>
+
+        <!-- Submit button for the form -->
+        <input type="submit" value="Register" />
+      </form>
+    </div>
+  </body>
+</html>
